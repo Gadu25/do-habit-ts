@@ -1,76 +1,73 @@
-# React + TypeScript + Vite
+# do-habit-ts
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A habit tracker project built with React + TypeScript, with the purpose of practicing **software engineering good practices** while building something useful for real life.
 
-Currently, two official plugins are available:
+## 🎯 Goals
+- Apply disciplined software development practices (clean repo, CI, testing, docs).
+- Learn full-stack skills by progressing through structured phases.
+- Build a working **habit tracker app** that can evolve into a portfolio project.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react)
-  uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc)
-  uses [SWC](https://swc.rs/) for Fast Refresh
+## 🗂 Project Phases
+This project is built in **progressive phases**, each adding complexity and new tools.
 
-## Expanding the ESLint configuration
+- **Phase 0 — Baseline & Hygiene** (⌛ - current phase)
+  - Init Vite + React + TypeScript.
+  - Add ESLint + Prettier.
+  - Setup Vitest + React Testing Library.
 
-If you are developing a production application, we recommend updating the configuration to enable
-type-aware lint rules:
+- **Phase 1 — Core Habits (Local State + Routing)**
+  - CRUD habits (add, list, delete).
+  - View habit detail page `/habit/:id`.
+  - State: `useReducer` + `localStorage`.
+  - Routing: React Router.
 
-```js
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+- **Phase 2 — Habit Tracking (Daily Completions)**
+  - Track daily completions + streaks.
+  - Completion history view.
+  - Migrate to Redux Toolkit for state.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **Phase 3 — Forms & Validation**
+  - Use React Hook Form + Zod.
+  - Validation rules (required name, max 50 chars).
+  - Accessibility with labels + aria attributes.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+- **Phase 4 — Mocked API Layer**
+  - Define REST API contract.
+  - Mock with MSW.
+  - Replace Redux reducers with RTK Query.
 
-You can also install
-[eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x)
-and
-[eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom)
-for React-specific lint rules:
+- **Phase 5 — Backend Implementation**
+  - Build backend with Express + TS + MongoDB.
+  - Add JWT auth, helmet, CORS, rate limiting.
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+- **Phase 6 — Full-Stack Integration**
+  - Connect frontend to backend.
+  - User-specific habits & completions.
 
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+- **Phase 7 — Production Readiness**
+  - Optimize queries & frontend performance.
+  - CI/CD with Docker + GitHub Actions.
+  - Deploy frontend (Vercel) + backend (Railway/Render).
+
+- **Phase 8 — PWA & Notifications**
+  - Offline support.
+  - Push reminders.
+
+- **Phase 9 — Next.js Migration**
+  - Move to Next.js App Router.
+  - Compare SSR/ISR trade-offs in docs.
+
+---
+
+## 🛠 Tech Stack
+- **Frontend:** React, TypeScript, Vite
+- **State Management:** useReducer → Redux Toolkit → RTK Query
+- **Testing:** Vitest, React Testing Library, MSW
+- **Backend (later phases):** Express, TypeScript, MongoDB
+- **Auth & Security:** JWT, Helmet, CORS, rate limiting
+- **Deployment:** Vercel (frontend), Railway/Render (backend)
+
+---
+
+## 📚 Documentation
+- [DECISIONS.md](./DECISIONS.md) — records key project choices and trade-offs.
