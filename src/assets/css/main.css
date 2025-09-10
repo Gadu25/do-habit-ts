@@ -1,0 +1,21 @@
+@import url("@/assets/css/components/topBar");
+@import url("@/assets/css/layouts/page");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

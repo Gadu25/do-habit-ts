@@ -10,12 +10,12 @@ A habit tracker project built with React + TypeScript, with the purpose of pract
 ## 🗂 Project Phases
 This project is built in **progressive phases**, each adding complexity and new tools.
 
-- **Phase 0 — Baseline & Hygiene** (⌛ - current phase)
+- **Phase 0 — Baseline & Hygiene**
   - Init Vite + React + TypeScript.
   - Add ESLint + Prettier.
   - Setup Vitest + React Testing Library.
 
-- **Phase 1 — Core Habits (Local State + Routing)**
+- **Phase 1 — Core Habits (Local State + Routing)** (⌛ - current phase)
   - CRUD habits (add, list, delete).
   - View habit detail page `/habit/:id`.
   - State: `useReducer` + `localStorage`.
