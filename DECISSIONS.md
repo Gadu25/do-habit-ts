@@ -13,6 +13,10 @@ This document records important engineering decisions for **do-habit-ts**.
   - **Why:** Ensures linting + testing runs on every push/PR.  
   - **Trade-off:** No local enforcement, but CI guarantees repo hygiene.
 
+- **Decision:** Skip React Testing Library + vitest.
+  - **Why:** This is a solo side project. as a project inteded for learning, at first this testing libraries will slowdown the development and stiffen the learning curve.
+  - **Future Plan:** Implement this testing libraries on the later phase/stages of the development.
+
 ---
 
 ## State Management
