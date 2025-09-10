@@ -1,5 +1,7 @@
-@import url("@/assets/css/components/topBar");
-@import url("@/assets/css/layouts/page");
+@import url("@/assets/css/components/index");
+@import url("@/assets/css/layouts/index");
+@import url("@/assets/css/pages/index");
+@import url("@/assets/css/common/index");
 
 * {
   box-sizing: border-box;

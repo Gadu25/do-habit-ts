@@ -1,0 +1,24 @@
+.form-group, .form-group .label, .form-group input {
+  display: block;
+}
+
+.form-group {
+  margin: 1rem 0;
+}
+
+.form-group label {
+  font-size: 14px;
+}
+
+.form-group input {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #5e5e5e;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
