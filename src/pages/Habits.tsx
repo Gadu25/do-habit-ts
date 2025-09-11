@@ -53,10 +53,6 @@ function Habits () {
           <div className="habit-list">
             {habits?.map((habit, index)=>(
               <HabitCard habit={habit} editHabit={() => editHabit(habit)} deleteHabit={() => deleteHabit(habit.id)} key={index} />
-              // <div className="habit" key={index}>
-              //   <p onClick={() => editHabit(habit)}>{habit.id} - {habit.title} - {habit.time}</p>
-              //   <span onClick={() => {deleteHabit(habit.id)}}>delete</span>
-              // </div>
             ))}
           </div>
         </div>
