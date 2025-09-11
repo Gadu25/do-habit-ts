@@ -2,11 +2,7 @@ import React from "react";
 import { useState } from "react";
 import HabitCard from "@/components/habits/HabitCard";
 
-interface Habit {
-  id: number,
-  title: string,
-  time: string
-}
+import type { Habit } from "@/types/habit";
 
 function Habits () {
   const [habits, setHabits] = useState<Habit[]>([]);

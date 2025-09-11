@@ -1,16 +1,6 @@
-interface Habit {
-  id: number,
-  title: string,
-  time: string
-}
+import type { HabitCardProps } from "@/types/habit";
 
-interface CardProps {
-  habit: Habit,
-  editHabit: () => void,
-  deleteHabit: () => void,
-}
-
-function HabitCard ({habit, editHabit, deleteHabit}: CardProps) {
+function HabitCard ({habit, editHabit, deleteHabit}: HabitCardProps) {
   return (
     <>
       <div className="habit-card">
