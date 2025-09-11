@@ -1,0 +1,9 @@
+.habits-page {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+}
+
+.habits-page .col {
+  flex: 1;
+}

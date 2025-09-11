@@ -1,0 +1,23 @@
+.topbar-wrapper {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: yellow;
+}
+
+.topbar {
+  display: flex;
+  max-width: 1280px;
+  margin: auto;
+  padding: 2rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navs ul{
+  display: flex;
+  gap: 3rem;
+  justify-content: space-around;
+  align-items: center;
+}

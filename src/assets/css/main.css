@@ -1,0 +1,23 @@
+@import url("@/assets/css/components/index");
+@import url("@/assets/css/layouts/index");
+@import url("@/assets/css/pages/index");
+@import url("@/assets/css/common/index");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
