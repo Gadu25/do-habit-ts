@@ -1,7 +1,11 @@
 export interface Habit {
   id: number;
-  title: string;
+  name: string;
+  description: string;
+  createdAt: string;
   time: string;
+  daysOfWeek: Array<number>;
+  durationPerDay: string;
 }
 
 export interface HabitCardProps {

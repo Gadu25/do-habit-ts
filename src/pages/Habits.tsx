@@ -3,15 +3,26 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { add, update, remove } from "@/features/habit/habitSlice";
 import HabitCard from "@/components/habits/HabitCard";
+import HabitForm from "@/components/habits/HabitForm";
 import type { RootState } from "@/app/store";
 
 import type { Habit } from "@/types/habit";
+
+const emptyHabit = { 
+  id: 0, 
+  name: "",
+  description: "",
+  createdAt: "",
+  time: "",
+  daysOfWeek: [],
+  durationPerDay: ""
+}
 
 function Habits() {
   const habits = useSelector((state: RootState) => state.habits.value);
   const dispatch = useDispatch();
 
-  const [singleHabit, setSingleHabit] = useState<Habit>({ id: 0, title: "", time: "" });
+  const [singleHabit, setSingleHabit] = useState<Habit>(emptyHabit);
   const [isEdit, setIsEdit] = useState<boolean>(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -21,7 +32,7 @@ function Habits() {
     } else {
       saveHabit();
     }
-    setSingleHabit({ id: 0, title: "", time: "" });
+    setSingleHabit(emptyHabit);
   };
 
   const saveHabit = () => {
@@ -37,7 +48,15 @@ function Habits() {
 
   const editHabit = (habit: Habit) => {
     setIsEdit(true);
-    setSingleHabit({ id: habit.id, title: habit.title, time: habit.time });
+    setSingleHabit({ 
+      id: habit.id, 
+      name: habit.name,
+      description: habit.description,
+      createdAt: habit.createdAt,
+      time: habit.time,
+      daysOfWeek: habit.daysOfWeek,
+      durationPerDay: habit.durationPerDay
+    });
   };
 
   const deleteHabit = (id: number) => {
@@ -48,7 +67,7 @@ function Habits() {
     <>
       <div className="habits-page">
         <div className="col">
-          <h4>List of Habits</h4>
+          <h1>List of Habits</h1>
           <div className="habit-list">
             {habits?.map((habit, index) => (
               <HabitCard
@@ -61,29 +80,12 @@ function Habits() {
           </div>
         </div>
         <div className="col">
-          <h4>Create a Habit</h4>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label>Name</label>
-              <input
-                type="text"
-                name="title"
-                placeholder="Name a new habit"
-                onChange={(e) => setSingleHabit({ ...singleHabit, title: e.target.value })}
-                value={singleHabit.title}
-              />
-            </div>
-            <div className="form-group">
-              <label>Remind every</label>
-              <input
-                type="time"
-                name="time"
-                onChange={(e) => setSingleHabit({ ...singleHabit, time: e.target.value })}
-                value={singleHabit.time}
-              />
-            </div>
-            <button type="submit">Save</button>
-          </form>
+          <HabitForm 
+            isEdit={isEdit} 
+            singleHabit={singleHabit} 
+            setSingleHabit={setSingleHabit} 
+            submitForm={handleSubmit}
+          />
         </div>
       </div>
     </>
