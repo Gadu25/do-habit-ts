@@ -1,11 +1,16 @@
 import React from "react";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { add, update, remove } from "@/features/habit/habitSlice";
 import HabitCard from "@/components/habits/HabitCard";
+import type { RootState } from "@/app/store";
 
 import type { Habit } from "@/types/habit";
 
 function Habits () {
-  const [habits, setHabits] = useState<Habit[]>([]);
+  const habits = useSelector((state: RootState) => state.habits.value);
+  const dispatch = useDispatch();
+
   const [singleHabit, setSingleHabit] = useState<Habit>({id: 0, title: "", time: ""});
   const [isEdit, setIsEdit] = useState<boolean>(false);
 
@@ -22,13 +27,11 @@ function Habits () {
   const saveHabit = () => {
     const id = habits.length > 0 ? habits[habits.length-1].id + 1 : 1;
     const habitWithId = {...singleHabit, id: id}
-    setHabits([...habits, habitWithId]);
+    dispatch(add(habitWithId));
   }
 
   const updateHabit = () => {
-    setHabits(habits.map((habit) => habit.id === singleHabit.id ?
-      singleHabit : habit
-    ))
+    dispatch(update(singleHabit))
     setIsEdit(false);
   }
 
@@ -38,7 +41,7 @@ function Habits () {
   }
 
   const deleteHabit = (id: number) => {
-    setHabits(habits.filter((habit) => habit.id !== id))
+    dispatch(remove(id));
   }
 
   return (
