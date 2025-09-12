@@ -1,9 +1,9 @@
 import { NavLink } from "react-router";
 
-function TopBar () {
+function TopBar() {
   const navs = [
-    {title: "Home", link: "/"},
-    {title: "My Habits", link: "/habits"}
+    { title: "Home", link: "/" },
+    { title: "My Habits", link: "/habits" },
   ];
 
   return (
@@ -21,7 +21,7 @@ function TopBar () {
         </nav>
       </div>
     </>
-  )
+  );
 }
 
 export default TopBar;

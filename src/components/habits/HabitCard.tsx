@@ -1,6 +1,6 @@
 import type { HabitCardProps } from "@/types/habit";
 
-function HabitCard ({habit, editHabit, deleteHabit}: HabitCardProps) {
+function HabitCard({ habit, editHabit, deleteHabit }: HabitCardProps) {
   return (
     <>
       <div className="habit-card">
@@ -13,7 +13,7 @@ function HabitCard ({habit, editHabit, deleteHabit}: HabitCardProps) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default HabitCard;

@@ -3,33 +3,31 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import type { Habit } from "@/types/habit";
 
 interface HabitState {
-  value: Habit[]
+  value: Habit[];
 }
 
 const initialState: HabitState = {
-  value: []
-}
+  value: [],
+};
 
 export const habitSlice = createSlice({
-  name: 'habits',
+  name: "habits",
   initialState,
   reducers: {
     add: (state, action: PayloadAction<Habit>) => {
-      state.value.push(action.payload)
+      state.value.push(action.payload);
     },
     update: (state, action: PayloadAction<Habit>) => {
-      console.log(action.payload)
-      state.value = state.value.map((habit) => 
-        habit.id === action.payload.id ? action.payload : habit
-      )
+      console.log(action.payload);
+      state.value = state.value.map((habit) =>
+        habit.id === action.payload.id ? action.payload : habit,
+      );
     },
     remove: (state, action: PayloadAction<number>) => {
-      state.value = state.value.filter((habit) => 
-        habit.id !== action.payload
-    )
-    }
-  }
-})
+      state.value = state.value.filter((habit) => habit.id !== action.payload);
+    },
+  },
+});
 
 export const { add, update, remove } = habitSlice.actions;
 

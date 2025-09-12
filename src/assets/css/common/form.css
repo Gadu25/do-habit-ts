@@ -1,4 +1,6 @@
-.form-group, .form-group .label, .form-group input {
+.form-group,
+.form-group .label,
+.form-group input {
   display: block;
 }
 

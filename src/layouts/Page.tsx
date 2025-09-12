@@ -1,13 +1,11 @@
-import React from "react"
+import React from "react";
 
 function Page({ children }: React.PropsWithChildren) {
   return (
     <>
-      <div className="page">
-        {children}
-      </div>
+      <div className="page">{children}</div>
     </>
-  )
+  );
 }
 
 export default Page;

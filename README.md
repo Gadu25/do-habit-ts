@@ -1,13 +1,16 @@
 # do-habit-ts
 
-A habit tracker project built with React + TypeScript, with the purpose of practicing **software engineering good practices** while building something useful for real life.
+A habit tracker project built with React + TypeScript, with the purpose of practicing **software
+engineering good practices** while building something useful for real life.
 
 ## 🎯 Goals
+
 - Apply disciplined software development practices (clean repo, CI, testing, docs).
 - Learn full-stack skills by progressing through structured phases.
 - Build a working **habit tracker app** that can evolve into a portfolio project.
 
 ## 🗂 Project Phases
+
 This project is built in **progressive phases**, each adding complexity and new tools.
 
 - **Phase 0 — Baseline & Hygiene**
@@ -60,6 +63,7 @@ This project is built in **progressive phases**, each adding complexity and new 
 ---
 
 ## 🛠 Tech Stack
+
 - **Frontend:** React, TypeScript, Vite
 - **State Management:** useReducer → Redux Toolkit → RTK Query
 - **Testing:** Vitest, React Testing Library, MSW
@@ -70,4 +74,5 @@ This project is built in **progressive phases**, each adding complexity and new 
 ---
 
 ## 📚 Documentation
+
 - [DECISIONS.md](./DECISIONS.md) — records key project choices and trade-offs.
