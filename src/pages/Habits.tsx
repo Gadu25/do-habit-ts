@@ -5,17 +5,10 @@ import { add, update, remove } from "@/features/habit/habitSlice";
 import HabitCard from "@/components/habits/HabitCard";
 import HabitForm from "@/components/habits/HabitForm";
 import type { RootState } from "@/app/store";
-
 import type { Habit } from "@/types/habit";
+import { emptyHabit } from "@/constants/habit";
+import { emptyTime } from "@/constants/common";
 
-const emptyHabit = {
-  id: 0,
-  name: "",
-  description: "",
-  createdAt: "",
-  times: [{ id: 1, time: "" }],
-  daysOfWeek: [],
-};
 
 function Habits() {
   const habits = useSelector((state: RootState) => state.habits.value);
@@ -52,7 +45,7 @@ function Habits() {
       name: habit.name,
       description: habit.description,
       createdAt: habit.createdAt,
-      times: [{ id: 1, time: "" }],
+      times: [emptyTime],
       daysOfWeek: habit.daysOfWeek,
     });
   };

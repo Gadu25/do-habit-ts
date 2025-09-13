@@ -1,3 +1,6 @@
+import type { Time } from "./common";
+
+// interfaces
 export interface Habit {
   id: number;
   name: string;
@@ -5,15 +8,4 @@ export interface Habit {
   createdAt: string;
   times: Time[];
   daysOfWeek: Array<number>;
-}
-
-export interface HabitCardProps {
-  habit: Habit;
-  editHabit: () => void;
-  deleteHabit: () => void;
-}
-
-export interface Time {
-  id: number;
-  time: string;
 }

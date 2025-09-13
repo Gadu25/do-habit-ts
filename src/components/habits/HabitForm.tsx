@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import type React from "react";
-import type { Habit, Time } from "@/types/habit";
+import type { Habit } from "@/types/habit";
+import type { Time } from "@/types/common";
+import { daysOfWeek, emptyTime } from "@/constants/common";
 
 interface HabitFormProps {
   isEdit: boolean;
@@ -8,18 +10,6 @@ interface HabitFormProps {
   setSingleHabit: (habit: Habit) => void;
   submitForm: (e: React.FormEvent<HTMLFormElement>) => void;
 }
-
-const daysOfWeek = [
-  { id: 1, shorten: "S", name: "Sunday" },
-  { id: 2, shorten: "M", name: "Monday" },
-  { id: 3, shorten: "T", name: "Tuesday" },
-  { id: 4, shorten: "W", name: "Wednesday" },
-  { id: 5, shorten: "T", name: "Thursday" },
-  { id: 6, shorten: "F", name: "Friday" },
-  { id: 7, shorten: "S", name: "Sunday" },
-];
-
-const emptyTime: Time = { id: 1, time: "" };
 
 function HabitForm({ isEdit, singleHabit, setSingleHabit, submitForm }: HabitFormProps) {
   const [times, setTimes] = useState<Time[]>([emptyTime]);
@@ -44,6 +34,10 @@ function HabitForm({ isEdit, singleHabit, setSingleHabit, submitForm }: HabitFor
   const addTime = () => {
     setTimes([...times, { ...emptyTime, id: times.length + 1 }]);
   };
+
+  const deleteTime = (id: number) => {
+    setTimes(times.filter((time) => time.id !== id))
+  }
 
   useEffect(() => {
     setSingleHabit({ ...singleHabit, times: times });
@@ -71,13 +65,16 @@ function HabitForm({ isEdit, singleHabit, setSingleHabit, submitForm }: HabitFor
             <span>Remind every</span>
             <div className="time-container">
               {times.map((time) => (
-                <input
-                  key={`time-${time.id}`}
-                  type="time"
-                  name={`time-${time.id}`}
-                  onChange={(e) => handleTimeChange(time, e)}
-                  value={time.time}
-                />
+                <div className="input-wrapper">
+                  <button type="button" className="input-delete" onClick={() => deleteTime(time.id)}>❌</button>
+                  <input
+                    key={`time-${time.id}`}
+                    type="time"
+                    name={`time-${time.id}`}
+                    onChange={(e) => handleTimeChange(time, e)}
+                    value={time.time}
+                  />
+                </div>
               ))}
             </div>
             <small className="add-more" onClick={addTime}>

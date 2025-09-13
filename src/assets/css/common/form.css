@@ -25,8 +25,31 @@
 
 .form-group.time .time-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   padding: 0.5rem 0;
+}
+
+.form-group.time .time-container .input-wrapper {
+  padding-top: 0.6rem;
+  padding-right: 1rem;
+  position: relative;
+}
+
+.form-group.time .time-container .input-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  font-size: 6px;
+  border-radius: 20px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: #fff;
 }
 
 .form-group.time input {
