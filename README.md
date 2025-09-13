@@ -18,13 +18,13 @@ This project is built in **progressive phases**, each adding complexity and new 
   - Add ESLint + Prettier.
   - Setup Vitest + React Testing Library.
 
-- **Phase 1 — Core Habits (Local State + Routing)** (⌛ - current phase)
+- **Phase 1 — Core Habits (Local State + Routing)**
   - CRUD habits (add, list, delete).
   - View habit detail page `/habit/:id`.
   - State: `useReducer` + `localStorage`.
   - Routing: React Router.
 
-- **Phase 2 — Habit Tracking (Daily Completions)**
+- **Phase 2 — Habit Tracking (Daily Completions)** (⌛ - current phase)
   - Track daily completions + streaks.
   - Completion history view.
   - Migrate to Redux Toolkit for state.
