@@ -3,13 +3,17 @@ export interface Habit {
   name: string;
   description: string;
   createdAt: string;
-  time: string;
+  times: Time[];
   daysOfWeek: Array<number>;
-  durationPerDay: string;
 }
 
 export interface HabitCardProps {
   habit: Habit;
   editHabit: () => void;
   deleteHabit: () => void;
+}
+
+export interface Time {
+  id: number;
+  time: string;
 }

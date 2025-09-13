@@ -7,33 +7,39 @@ interface Day {
 }
 
 const daysOfWeek: Day[] = [
-  {id: 1, shorten: 'S', name: 'Sunday'},
-  {id: 2, shorten: 'M', name: 'Monday'},
-  {id: 3, shorten: 'T', name: 'Tuesday'},
-  {id: 4, shorten: 'W', name: 'Wednesday'},
-  {id: 5, shorten: 'T', name: 'Thursday'},
-  {id: 6, shorten: 'F', name: 'Friday'},
-  {id: 7, shorten: 'S', name: 'Sunday'},
+  { id: 1, shorten: "S", name: "Sunday" },
+  { id: 2, shorten: "M", name: "Monday" },
+  { id: 3, shorten: "T", name: "Tuesday" },
+  { id: 4, shorten: "W", name: "Wednesday" },
+  { id: 5, shorten: "T", name: "Thursday" },
+  { id: 6, shorten: "F", name: "Friday" },
+  { id: 7, shorten: "S", name: "Sunday" },
 ];
 
 function HabitCard({ habit, editHabit, deleteHabit }: HabitCardProps) {
   const getDay = (id: number): string => {
-    const res =  daysOfWeek.filter((day) => day.id === id)
+    const res = daysOfWeek.filter((day) => day.id === id);
     return res[0].name;
-  }
+  };
 
   return (
     <>
       <div className="habit-card">
         <div className="habit-desc" onClick={editHabit}>
           <h5>{habit.name}</h5>
-          <small>{habit.time}</small>
-          <br/>
+          {habit.times.map((time) => (
+            <div className="habit-time" key={time.id}>
+              {time.time}
+            </div>
+          ))}
+          <br />
           <small>every</small>
           {habit.daysOfWeek.map((day) => (
-            <div className="habit-day" key={day}>{getDay(day)}</div>
+            <div className="habit-day" key={day}>
+              {getDay(day)}
+            </div>
           ))}
-          <hr/>
+          <hr />
           <p>{habit.description}</p>
         </div>
         <div className="habit-action">

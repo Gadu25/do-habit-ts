@@ -8,15 +8,14 @@ import type { RootState } from "@/app/store";
 
 import type { Habit } from "@/types/habit";
 
-const emptyHabit = { 
-  id: 0, 
+const emptyHabit = {
+  id: 0,
   name: "",
   description: "",
   createdAt: "",
-  time: "",
+  times: [{ id: 1, time: "" }],
   daysOfWeek: [],
-  durationPerDay: ""
-}
+};
 
 function Habits() {
   const habits = useSelector((state: RootState) => state.habits.value);
@@ -48,14 +47,13 @@ function Habits() {
 
   const editHabit = (habit: Habit) => {
     setIsEdit(true);
-    setSingleHabit({ 
-      id: habit.id, 
+    setSingleHabit({
+      id: habit.id,
       name: habit.name,
       description: habit.description,
       createdAt: habit.createdAt,
-      time: habit.time,
+      times: [{ id: 1, time: "" }],
       daysOfWeek: habit.daysOfWeek,
-      durationPerDay: habit.durationPerDay
     });
   };
 
@@ -80,10 +78,10 @@ function Habits() {
           </div>
         </div>
         <div className="col">
-          <HabitForm 
-            isEdit={isEdit} 
-            singleHabit={singleHabit} 
-            setSingleHabit={setSingleHabit} 
+          <HabitForm
+            isEdit={isEdit}
+            singleHabit={singleHabit}
+            setSingleHabit={setSingleHabit}
             submitForm={handleSubmit}
           />
         </div>

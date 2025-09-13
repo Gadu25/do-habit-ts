@@ -23,6 +23,21 @@
   width: 100%;
 }
 
+.form-group.time .time-container {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.form-group.time input {
+  width: auto;
+}
+
+.form-group.time .add-more {
+  cursor: pointer;
+  color: rgb(69, 69, 252);
+}
+
 button {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -31,7 +46,7 @@ button {
 
 .form-week {
   margin-top: 0.5rem;
-  padding: 1rem;
+  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
   gap: 0.5rem;
@@ -55,6 +70,7 @@ button {
 }
 
 .form-week .form-day.active {
+  color: rgb(63, 63, 236);
   border: 1px solid rgb(63, 63, 236);
 }
 
