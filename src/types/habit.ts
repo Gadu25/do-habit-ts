@@ -8,4 +8,8 @@ export interface Habit {
   createdAt: string;
   times: Time[];
   daysOfWeek: Array<number>;
+  // denormalized fields for fast reads:
+  lastCompletedAt: Date | null;
+  streak: number | null;
+  bestStreak: number | null;
 }

@@ -65,10 +65,9 @@ function HabitForm({ isEdit, singleHabit, setSingleHabit, submitForm }: HabitFor
             <span>Remind every</span>
             <div className="time-container">
               {times.map((time) => (
-                <div className="input-wrapper">
+                <div className="input-wrapper" key={`time-${time.id}`}>
                   <button type="button" className="input-delete" onClick={() => deleteTime(time.id)}>❌</button>
                   <input
-                    key={`time-${time.id}`}
                     type="time"
                     name={`time-${time.id}`}
                     onChange={(e) => handleTimeChange(time, e)}

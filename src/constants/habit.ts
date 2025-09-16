@@ -5,4 +5,7 @@ export const emptyHabit = {
   createdAt: "",
   times: [{ id: 1, time: "" }],
   daysOfWeek: [],
+  lastCompletedAt: null,
+  streak: null,
+  bestStreak: null
 }
