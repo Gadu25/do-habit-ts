@@ -11,8 +11,6 @@ import { emptyTime } from "@/constants/common";
 
 // temporary; this should be on the backend - in the future
 import HabitReminder from "@/components/habits/TempTimer";
-import HabitStarter from "@/components/modals/HabitStarter";
-
 
 function Habits() {
   const habits = useSelector((state: RootState) => state.habits.value);
@@ -86,7 +84,6 @@ function Habits() {
           />
         </div>
         <HabitReminder habits={habits} />
-        <HabitStarter />
       </div>
     </>
   );

@@ -1,11 +1,14 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import type { Habit } from "@/types/habit";
+import HabitStarter from "../modals/HabitStarter";
 
 interface HabitReminderProps {
   habits: Habit[]
 }
 
 function HabitReminder({ habits }: HabitReminderProps) {
+  const [isShowModal, setIsShowModal] = useState<Boolean>(false);
+
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
@@ -14,6 +17,7 @@ function HabitReminder({ habits }: HabitReminderProps) {
           const [h, m] = t.time.split(":").map(Number);
           if (now.getHours() === h && now.getMinutes() === m) {
             alert(`Reminder: ${habit.name}`);
+            setIsShowModal(true);
           } else {
             console.log('minute checked')
           }
@@ -24,7 +28,11 @@ function HabitReminder({ habits }: HabitReminderProps) {
     return () => clearInterval(interval);
   }, [habits]);
 
-  return null;
+  return (
+    <>
+      {isShowModal ? <HabitStarter/> : null}
+    </>
+  );
 }
 
 export default HabitReminder;
